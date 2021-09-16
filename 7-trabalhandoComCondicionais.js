@@ -7,18 +7,22 @@ const listaDestinos = new Array(`Salvador`, `São Paulo`, `Rio de Janeiro`)
 
 const idadeComprador = 21
 const pessoaAcompanhada = false
+const passagemComprada = true
 
 console.log('Destinos possiveis: ')
 console.log(listaDestinos)
 
 const destinoRemover = listaDestinos.splice(2, 1)
 
-if (idadeComprador >= 18 || pessoaAcompanhada) {
-  console.log(
-    'compra possível de ser feita, maior de idade ou está acompanhado.'
-  )
-  destinoRemover //removendo item caso for maior de idade
-  console.log(listaDestinos)
-} else {
-  console.log('Proibido a venda para menores de idades desacompanhados.')
+console.log('Embarque: \n\n ')
+if (passagemComprada) {
+  if (idadeComprador >= 18 || pessoaAcompanhada) {
+    console.log(
+      'compra possível de ser feita, maior de idade ou está acompanhado.'
+    )
+    destinoRemover //removendo item caso for maior de idade
+    console.log(listaDestinos)
+  } else {
+    console.log('Proibido a venda para menores de idades desacompanhados.')
+  }
 }
